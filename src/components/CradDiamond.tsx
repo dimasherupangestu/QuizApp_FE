@@ -9,19 +9,19 @@ import { DiamonData } from "../json/Diamon";
 
 export const CradDiamond = (props: DiamonData) => {
   return (
-    <Box px={0}>
-      <HStack mt={10} space={"md"}>
+    <Box key={props.id}>
+      <HStack mt={10}>
         <TouchableOpacity>
           <Box
             display="flex"
-            w={114}
+            w={119}
             minWidth={100}
-            height={160}
+            height={150}
             mx={"auto"}
-            overflow="hidden"
             borderRadius={"$xl"}
             borderWidth={2}
             borderColor={"#333"}
+            overflow="hidden"
           >
             <LinearGradient
               colors={["#66D1FF", "#0C1620"]}
@@ -29,23 +29,32 @@ export const CradDiamond = (props: DiamonData) => {
                 width: "100%",
                 height: "100%",
                 display: "flex",
-
                 alignItems: "center",
               }}
             >
-              <Text textAlign="center" fontWeight="bold" color="#24FF00">
+              <Text
+                textAlign="center"
+                mt={5}
+                fontWeight="bold"
+                color="#24FF00"
+                fontSize="$lg"
+              >
                 {props.pcs}
               </Text>
 
-              <Image
-                source={props.img}
-                alt="diamon"
-                width={50}
-                mt={5}
-                height={50}
-              ></Image>
+              <Box w={90} h={80}>
+                <Image
+                  source={props.img}
+                  alt="diamon"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "center",
+                  }}
+                ></Image>
+              </Box>
               <HStack>
-                <Text color="white" mt={6} fontWeight="bold" fontSize="$xl">
+                <Text color="#F36C21" fontWeight="bold" fontSize="$md" mt={2}>
                   {props.price}
                 </Text>
               </HStack>

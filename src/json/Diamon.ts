@@ -6,11 +6,11 @@ export interface DiamonData {
 }
 [];
 
-export const Diamond: DiamonData[] = [
+export const DiamondJson: DiamonData[] = [
   {
     id: 1,
     pcs: 100,
-    img: require("../../assets/diamon/diamon1.png"),
+    img: require("../../assets/diamon/tes.png"),
     price: "Rp.20.000",
   },
   {
@@ -22,9 +22,9 @@ export const Diamond: DiamonData[] = [
 
   {
     id: 3,
-    pcs: 250,
+    pcs: 500,
     img: require("../../assets/diamon/diamon3.png"),
-    price: "Rp.37.000",
+    price: "Rp.69.000",
   },
 
   {

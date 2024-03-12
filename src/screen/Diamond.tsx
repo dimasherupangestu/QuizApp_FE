@@ -2,6 +2,8 @@ import {
   Avatar,
   AvatarImage,
   Box,
+  Button,
+  ButtonText,
   HStack,
   Text,
   View,
@@ -17,6 +19,7 @@ import { ScrollView, ScrollViewBase, TouchableOpacity } from "react-native";
 import { CradDiamond } from "../components/CradDiamond";
 import { DiamonData, DiamondJson } from "../json/Diamon";
 import { Image } from "@gluestack-ui/themed";
+import { ButtonComponen } from "../components/ButtonComponen";
 
 export const Diamond = ({ navigation }: any) => {
   return (
@@ -28,11 +31,11 @@ export const Diamond = ({ navigation }: any) => {
         position="relative"
       >
         <ScrollView>
-          <Box position="absolute" top={10} left={10}>
+          <Box position="absolute" top={5} left={5}>
             <TouchableOpacity
               style={{ position: "absolute", top: 50, left: 10 }}
               onPress={() => {
-                navigation.navigate("home");
+                navigation.navigate("Home");
               }}
             >
               <HStack>
@@ -45,76 +48,46 @@ export const Diamond = ({ navigation }: any) => {
           </Box>
 
           <Box
-            display="flex"
-            mt={"$1/2"}
-            flexWrap="wrap"
-            width={"100%"}
-            height={"auto"}
-            bg="red"
+            flex={1}
             justifyContent="center"
             alignItems="center"
             alignContent="center"
+            mt={"$1/3"}
           >
-            <HStack mt={10} space={"md"}>
-              <TouchableOpacity>
-                <Box
-                  display="flex"
-                  w={120}
-                  minWidth={100}
-                  height={150}
-                  mx={"auto"}
-                  overflow="hidden"
-                  borderRadius={"$xl"}
-                  borderWidth={2}
-                  borderColor={"#333"}
-                >
-                  <LinearGradient
-                    colors={["#66D1FF", "#0C1620"]}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text textAlign="center" fontWeight="bold" color="#24FF00">
-                      1000
-                    </Text>
-
-                    <Image
-                      source={require("../../assets/diamon/diamon1.png")}
-                      alt="diamon"
-                      w={"100%"}
-                      px={20}
-                      h={60}
-                      mt={5}
-                    ></Image>
-                    <HStack>
-                      <Text
-                        color="white"
-                        mt={6}
-                        fontWeight="bold"
-                        fontSize="$xl"
-                      >
-                        20000
-                      </Text>
-                    </HStack>
-                  </LinearGradient>
-                </Box>
-              </TouchableOpacity>
-            </HStack>
-
-            {/* 
-            <HStack space={"sm"} mx={"auto"}>
-              {AvatarDiamon.slice(0, 3).map((item) => (
-                <CradAvatar
-                  key={item.id}
-                  avatar={item.avatar}
-                  type={item.type}
-                  Diamon={item.Diamon}
-                />
-              ))}
-            </HStack> */}
+            <Box
+              display="flex"
+              width={"100%"}
+              height={400}
+              flexDirection="row"
+              justifyContent="center"
+              alignItems="center"
+              alignContent="center"
+              flexWrap="wrap"
+            >
+              <Box
+                width={"100%"}
+                display="flex"
+                flexWrap="wrap"
+                flexDirection="row"
+                gap={8}
+                justifyContent="center"
+                alignItems="center"
+              >
+                {DiamondJson.map((item) => (
+                  <CradDiamond
+                    key={item.id}
+                    id={item.id}
+                    pcs={item.pcs}
+                    img={item.img}
+                    price={item.price}
+                  />
+                ))}
+              </Box>
+            </Box>
+            <ButtonComponen
+              nameOne="Cancel"
+              nameTwo="Purchase"
+            ></ButtonComponen>
           </Box>
         </ScrollView>
       </View>

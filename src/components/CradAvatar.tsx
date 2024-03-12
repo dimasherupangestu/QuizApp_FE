@@ -8,7 +8,7 @@ import { TouchableOpacity } from "react-native";
 
 export const CradAvatar = (props: AvatarData) => {
   return (
-    <Box px={0}>
+    <Box key={props.id}>
       <HStack mt={10} space={"md"}>
         <TouchableOpacity>
           <Box

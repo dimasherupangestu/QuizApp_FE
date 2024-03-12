@@ -14,6 +14,7 @@ import { LayoutBg } from "../Layout/LayoutBg";
 import { CradAvatar } from "../components/CradAvatar";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, ScrollViewBase, TouchableOpacity } from "react-native";
+import { ButtonComponen } from "../components/ButtonComponen";
 
 export const UpdateAvatar = ({ navigation }: any) => {
   return (
@@ -25,7 +26,7 @@ export const UpdateAvatar = ({ navigation }: any) => {
         position="relative"
       >
         <ScrollView>
-          <Box position="absolute" top={10} left={10}>
+          <Box position="absolute" top={5} left={5}>
             <TouchableOpacity
               style={{ position: "absolute", top: 50, left: 10 }}
               onPress={() => {
@@ -71,40 +72,8 @@ export const UpdateAvatar = ({ navigation }: any) => {
                 />
               ))}
             </HStack>
-            {/*   
-          {/* <HStack space={"sm"} mt={10} mx={"auto"}>
-            <Box
-              display="flex"
-              w={120}
-              height={160}
-              mx={"auto"}
-              overflow="hidden"
-              borderRadius={"$xl"}
-              borderWidth={2}
-              borderColor={"#333"}
-            >
-              <LinearGradient
-                colors={["#66D1FF", "#0C1620"]}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-
-                  alignItems: "center",
-                }}
-              >
-                <Avatar size="xl" borderWidth={1} borderColor={"#333"} mt={10}>
-                  <AvatarImage
-                    source={require("../../assets/avatar/avatar2.jpg")}
-                  />
-                </Avatar>
-                <Text color="white" mt={6} fontWeight="bold" fontSize="$xl">
-                  Free
-                </Text>
-              </LinearGradient>
-            </Box>
-          </HStack> */}
           </Box>
+          <ButtonComponen nameOne="Cancel" nameTwo="Save" />
         </ScrollView>
       </View>
     </LayoutBg>

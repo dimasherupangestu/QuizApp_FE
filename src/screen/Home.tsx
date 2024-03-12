@@ -55,11 +55,11 @@ export const Home = ({ navigation }: any) => {
             <Text textAlign="center" color="white">
               200
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("Diamond")}>
-              <Box borderRadius={4} bg="#00ff47" ml={"auto"}>
+            <Box ml={"auto"} borderRadius={4} bg="#00ff47">
+              <TouchableOpacity onPress={() => navigation.navigate("Diamond")}>
                 <AntDesign name="plussquareo" size={24} color="black" />
-              </Box>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </Box>
           </Box>
         </Box>
 
@@ -116,10 +116,13 @@ export const Home = ({ navigation }: any) => {
           <Image
             source={require("../../assets/Image/icon.png")}
             w={250}
+            alt="icon"
             h={250}
           ></Image>
           <Button bg="#59B4DD" w={"40%"} borderRadius={"$xl"} mt={-20}>
-            <ButtonText>Star Game</ButtonText>
+            <TouchableOpacity onPress={() => navigation.navigate("MatchPage")}>
+              <ButtonText>Star Game</ButtonText>
+            </TouchableOpacity>
           </Button>
         </Center>
       </LayoutBg>

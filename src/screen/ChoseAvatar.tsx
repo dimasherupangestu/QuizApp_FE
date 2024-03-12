@@ -94,7 +94,7 @@ export const ChoseAvatar = ({ navigation }: any) => {
                     width={"90%"}
                     bg="#59B4DD"
                     borderRadius="$xl"
-                    onPress={() => navigation.navigate("home")}
+                    onPress={() => navigation.navigate("Home")}
                   >
                     <ButtonText>Submit</ButtonText>
                   </Button>
