@@ -1,10 +1,20 @@
-import { Box, Image } from "@gluestack-ui/themed";
+import {
+  Avatar,
+  AvatarImage,
+  Box,
+  HStack,
+  Heading,
+  Image,
+} from "@gluestack-ui/themed";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { LayoutBg } from "../Layout/LayoutBg";
 import { Text } from "@gluestack-ui/themed";
 import { ImageLogo } from "../components/Image";
 import { AntDesign } from "@expo/vector-icons";
+
+import { CradUser } from "../components/CradUser";
+import { UserGamee } from "../json/User";
 export const MatchPage = ({ navigation }: any) => {
   return (
     <View style={{ width: "100%", height: "100%", minHeight: "100%" }}>
@@ -31,7 +41,34 @@ export const MatchPage = ({ navigation }: any) => {
           </Box>
         </Box>
 
-        <Box display="flex"></Box>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt={20}
+          w={"100%"}
+          mb={20}
+        >
+          <Text fontWeight="bold" color="#FFC700" fontSize={"$5xl"}>
+            00:18
+          </Text>
+          <Text color="white" mt={-5}>
+            Finding Opponent
+          </Text>
+          <Text color="white" mt={1}>
+            <Text color="#18D742">4</Text> /5
+          </Text>
+        </Box>
+        <TouchableOpacity onPress={() => navigation.navigate("GamePage")}>
+          {UserGamee.map((item) => (
+            <CradUser
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              avatar={item.avatar}
+            />
+          ))}
+        </TouchableOpacity>
       </LayoutBg>
     </View>
   );

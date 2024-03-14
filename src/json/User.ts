@@ -5,16 +5,16 @@ export interface UserGame {
 }
 [];
 
-export const UserGame: UserGame[] = [
+export const UserGamee: UserGame[] = [
   {
     id: 1,
-    avatar: require("../../assets/avatar/avatar1.jpg"),
+    avatar: require("../../assets/avatar/AvatarD1.png"),
     name: "Dimasheru",
   },
 
   {
     id: 2,
-    avatar: require("../../assets/avatar/avatar2.jpg"),
+    avatar: require("../../assets/avatar/AvatarD4.png"),
     name: "Navila_Ayu",
   },
 
@@ -26,7 +26,7 @@ export const UserGame: UserGame[] = [
 
   {
     id: 4,
-    avatar: require("../../assets/avatar/avatar4.jpg"),
+    avatar: require("../../assets/avatar/avatar1.jpg"),
     name: "SahaAing",
   },
 

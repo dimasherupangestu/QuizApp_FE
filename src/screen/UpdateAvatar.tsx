@@ -30,7 +30,7 @@ export const UpdateAvatar = ({ navigation }: any) => {
             <TouchableOpacity
               style={{ position: "absolute", top: 50, left: 10 }}
               onPress={() => {
-                navigation.navigate("home");
+                navigation.navigate("Home");
               }}
             >
               <HStack>
