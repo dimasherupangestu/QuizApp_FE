@@ -19,7 +19,7 @@ export const ButtonComponen = ({ nameOne, nameTwo }: ButtonProps) => {
       >
         <HStack space={"xl"}>
           <Button
-            width={120}
+            width={146}
             h={42}
             borderRadius={12}
             borderWidth={2}
@@ -31,7 +31,7 @@ export const ButtonComponen = ({ nameOne, nameTwo }: ButtonProps) => {
           </Button>
 
           <Button
-            width={120}
+            width={146}
             h={42}
             borderRadius={12}
             borderWidth={2}

@@ -11,7 +11,7 @@ import {
 } from "@gluestack-ui/themed";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { LayoutBg } from "../Layout/LayoutBg";
 import { ImageLogo } from "../components/Image";
 
@@ -70,6 +70,9 @@ export const Login = ({ navigation }: any) => {
               </Text>
             </Box>
           )}
+          <TouchableOpacity onPress={() => navigation.navigate("Champion")}>
+            <Text color="white">Champion</Text>
+          </TouchableOpacity>
         </Box>
       </View>
     </LayoutBg>

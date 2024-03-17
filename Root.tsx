@@ -12,6 +12,7 @@ import { View } from "react-native";
 import { Diamond } from "./src/screen/Diamond";
 import { MatchPage } from "./src/screen/MatchPage";
 import { GamePage } from "./src/screen/GamePage";
+import { Champion } from "./src/screen/Champion";
 
 export const Root = () => {
   const Stack = createNativeStackNavigator();
@@ -57,6 +58,11 @@ export const Root = () => {
         <Stack.Screen
           name="GamePage"
           component={GamePage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Champion"
+          component={Champion}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

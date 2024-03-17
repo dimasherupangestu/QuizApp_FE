@@ -9,7 +9,7 @@ import { QuisJson } from "../json/Quis";
 import { Progress } from "@gluestack-ui/themed";
 import { ProgressFilledTrack } from "@gluestack-ui/themed";
 
-export const GamePage = () => {
+export const GamePage = ({ navigation }: any) => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answered, setAnswered] = useState(false);
 
@@ -30,17 +30,25 @@ export const GamePage = () => {
     setSelectedOption(null); // Reset pilihan jawaban
     setAnswered(false);
     setQuestionIndex((prevIndex) => prevIndex + 1);
+    // navigation.navigate("Champion");
   };
   return (
     <View style={{ width: "100%", height: "100%", minHeight: "100%" }}>
       <LayoutBg>
-        <Box flex={1} justifyContent="center" alignItems="center">
+        <Box
+          flex={1}
+          justifyContent="center"
+          alignItems="center"
+          position="relative"
+        >
           <Box
             w={"90%"}
             mt={10}
             h={"90%"}
             bg="rgba(0, 0, 0, 0.5)"
             borderRadius={20}
+            position="relative"
+            overflow="hidden"
           >
             <Box marginLeft={"auto"} mt={18} pr={20}>
               <HStack>
@@ -127,14 +135,13 @@ export const GamePage = () => {
                 </TouchableOpacity>
               )}
             </Box>
+            <Box w={"100%"} h={20} position="absolute" bottom={0} ml={10}>
+              <Progress value={40} bgColor="white" w={"95%"} size="lg">
+                <ProgressFilledTrack />
+              </Progress>
+            </Box>
           </Box>
-          <Progress value={40} w={"100%"} size="lg">
-            <ProgressFilledTrack />
-          </Progress>
         </Box>
-        <Progress value={40} w={"100%"} size="lg">
-          <ProgressFilledTrack />
-        </Progress>
       </LayoutBg>
     </View>
   );

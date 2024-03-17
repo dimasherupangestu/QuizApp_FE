@@ -15,7 +15,7 @@ export const CradUser = (props: UserGame) => {
             width={"80%"}
             h={75}
             minHeight={70}
-            bg="rgba(0, 0, 0, 0.5)"
+            bg={props.bgColor ? props.bgColor : "rgba(0, 0, 0, 0.5)"}
             borderRadius={10}
             borderColor="#fff"
             justifyContent="center"
@@ -28,6 +28,11 @@ export const CradUser = (props: UserGame) => {
               <Text fontWeight="bold" ml={10} my={"auto"} color="white">
                 {props.name}
               </Text>
+              {props.score && (
+                <Text fontWeight="bold" ml={"auto"} color="white" pr={10}>
+                  {props.score}
+                </Text>
+              )}
             </HStack>
           </Box>
         </Box>
